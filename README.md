@@ -31,18 +31,18 @@ Usage
 3. LiteTreeViewControl uses an item container named LiteTreeViewItem.
 this how you can change its style
 
-```xaml
-<liteTreeView:LiteTreeViewControl Grid.Column="1"
-                                  MyItemsSource="{Binding Path=Items}">   
-    <liteTreeView:LiteTreeViewControl.ItemContainerStyle>
-        <Style TargetType="liteTreeView:LiteTreeViewItem">
-            <Setter Property="IsOpen"
-                    Value="{Binding IsItOpen,Mode=TwoWay}"></Setter>
-            <Setter Property="IsSelected"
-                    Value="{Binding IsItSelected,Mode=TwoWay}"></Setter>
-        </Style>
-    </liteTreeView:LiteTreeViewControl.ItemContainerStyle>
-</liteTreeView:LiteTreeViewControl>
-```
+	```xaml
+	<liteTreeView:LiteTreeViewControl Grid.Column="1"
+	                                  MyItemsSource="{Binding Path=Items}">   
+	    <liteTreeView:LiteTreeViewControl.ItemContainerStyle>
+	        <Style TargetType="liteTreeView:LiteTreeViewItem">
+	            <Setter Property="IsOpen"
+	                    Value="{Binding IsItOpen,Mode=TwoWay}"></Setter>
+	            <Setter Property="IsSelected"
+	                    Value="{Binding IsItSelected,Mode=TwoWay}"></Setter>
+	        </Style>
+	    </liteTreeView:LiteTreeViewControl.ItemContainerStyle>
+	</liteTreeView:LiteTreeViewControl>
+	```
 
 > Written with [StackEdit](https://stackedit.io/).
