@@ -1,0 +1,51 @@
+﻿<Window x:Class="LiteTreeViewTestApp.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:liteTreeView="clr-namespace:LiteTreeView;assembly=LiteTreeView"
+        Title="MainWindow"
+        Height="350"
+        Width="525"
+        x:Name="This">
+    <Window.Resources>
+
+    </Window.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        
+        <liteTreeView:LiteTreeViewControl Grid.Column="1"
+                                          
+                                          MyItemsSource="{Binding ElementName=This,Path=Items}">
+            <liteTreeView:LiteTreeViewControl.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock Text="{Binding Name}"></TextBlock>
+                </DataTemplate>
+            </liteTreeView:LiteTreeViewControl.ItemTemplate>
+            <liteTreeView:LiteTreeViewControl.ItemContainerStyle>
+                <Style TargetType="liteTreeView:LiteTreeViewItem">
+                    <Setter Property="IsOpen"
+                            Value="{Binding IsItOpen,Mode=TwoWay}"></Setter>
+                </Style>
+            </liteTreeView:LiteTreeViewControl.ItemContainerStyle>
+        </liteTreeView:LiteTreeViewControl>
+        <StackPanel Orientation="Horizontal"
+                    Grid.Row="1">
+            <Button Click="ButtonBase_OnClick">openall</Button>
+            <Button Click="CloseAll">Close All</Button>
+            <Button Click="AddItem">add</Button>
+            <Button Click="AddItem2">add2</Button>
+            <Button Click="RemoveChild" Content="Remove"/>
+            <Button Click="AddToRoot"
+                    Content="AddToRoot"></Button>
+            <Button Click="ChangeSource"
+                    Content="ChangeSource"></Button>
+        </StackPanel>
+
+    </Grid>
+</Window>
